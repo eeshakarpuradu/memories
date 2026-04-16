@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+} 
+
+body {
+  background-color: #560704;
+  margin: 0;
+}
+
+/* FULL SCREEN SECTION */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical center */
+  align-items: center;       /* horizontal center */
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+
+
+/* TEXT */
+
+.main-heading {
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color:  #FFECC8;
+  font-size: clamp(50px, 5vw, 70px);
+  
+
+}
+
+.second-heading {
+  font-family: "Reenie Beanie", cursive;
+  color: #FFECC8;
+  font-size: clamp(28px, 5vw, 50px); /* 🔥 responsive magic */
+  max-width: 700px;
+  line-height: 1.4;
+}
+
+.menu-buttons{
+  display: flex;
+  gap: 25px;
+}
+
+.menu-btn{
+  background-color: transparent;
+  border: 2px solid #FFECC8;
+  color: #FFECC8;
+  font-family: "Reenie Beanie", cursive;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: clamp(29px, 5vw, 40px);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  
+  max-width: 280px;
+}
+
+.menu-btn:hover {
+  background-color: #FFECC8;
+  color: #560704;
+}
+
+/* at width 560px (check again), add some media-queries so that the buttons stack in form of column */
+
+/* ARROW */
+.down-arrow {
+  position: absolute;
+  bottom: 5%;   /* 👈 keeps it at bottom always */
+  font-size: 25px;
+  background: transparent;
+  border: none;
+  color: #FFECC8;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 645px) {
+  .menu-buttons {
+    flex-direction: column;
+    gap: 25px;
+  }
+}

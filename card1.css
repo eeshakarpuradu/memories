@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.header{
+    position: sticky;
+    /* top: the stickiness starts when the gap between the end screen and header is 5px*/
+    top: 5px; 
+    padding: 20px;
+}
+
+.card{
+    /* all elements inside of the card follow flex */
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 280px;
+    /* when we use max-wdth, we don't need to specifically mention about width. If width: 100%, it just means that whatever the screen size be, the conatainer's width will be 100% as along as we don't reach max-width */
+    position: relative;
+    border-radius: 20px;
+    padding: 25px;
+    outline: 2px solid rgb(89, 0, 255);
+}
+
+.img-container{
+    position: relative;
+    width: 100%;
+    /* outline: 2px solid red; */
+}
+
+/* The width of img-container is same as the card. It looks a bit smaller due to the padding added in the card. Img is taking 1005 of the container.  */
+
+img{
+    width: 100%;
+    display: block;
+    border-radius: 30px;
+    margin-bottom: 5px;
+    
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+}
+
+.date{
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    font-size: small;
+}
+
+.heart{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    font-size: small;
+}
+
+.top-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+
+
+
