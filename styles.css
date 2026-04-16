@@ -53,7 +53,7 @@ section {
   font-family: "Reenie Beanie", cursive;
   padding: 10px 25px;
   border-radius: 30px;
-  font-size: clamp(29px, 5vw, 40px);
+  font-size: clamp(30px, 5vw, 43px);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   
@@ -77,6 +77,27 @@ section {
   color: #FFECC8;
   cursor: pointer;
   animation: bounce 1.5s infinite;
+}
+
+/* Enter memories */
+.form-head{
+  font-family: "Reenie Beanie", cursive;
+  color: #FFECC8;
+  font-size: clamp(28px, 5vw, 50px); 
+  font-weight: 400;
+}
+
+.card{
+  background-color: #EADEC7;
+  font-family: "playfair display", serif;
+  color: #560704;
+  font-weight: 500;
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  min-height: 400px;
+  max-width: 400px;
+  margin: 20px auto; /* center horizontally with some vertical spacing */
 }
 
 

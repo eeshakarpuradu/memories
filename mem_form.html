@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Federo&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="form-container">
+            <h2 class="form-head">Our Memories</h2>
+            <div class="card">
+                <p>Enter thumbnail</p>
+                <p id="thumbnail-type"><button class="form-btn" id="img-btn">Upload Image</button>
+                <button class="form-btn" id="sentence-btn">A word or sentence</button></p>
+            </div>
+        </div>
+        
+    </section>
+    <script>
+        let thumb_type = document.getElementById("thumbnail-type")
+        let image_btn = document.getElementById("img-btn")
+        let sentence_btn = document.getElementById("sentence-btn")
+
+        image_btn.addEventListener("click", function(){
+            let img_upload = `
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="imageUpload">Select an image:</label>
+            <input type="file" id="imageUpload" name="image" accept="image/*">
+            <button type="submit">Upload Image</button>
+            </form>
+
+            `
+            thumb_type.innerHTML = img_upload
+        })
+        sentence_btn.addEventListener("click", function(){
+            thumb_type.innerHTML = "<p>hello, steve</p>"
+        })
+    </script>
+</body>
+</html>
