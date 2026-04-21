@@ -7,14 +7,19 @@ body {
   margin: 0;
 }
 
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* FULL SCREEN SECTION */
 section {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px); /* 100% of viewport height minus navbar height */
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* vertical center */
+  justify-content: center;  /*  vertical center */
   align-items: center;       /* horizontal center */
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   position: relative;
 }
@@ -80,10 +85,51 @@ section {
 }
 
 /* Enter memories */
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px 25px;
+  margin: 10px 0px;
+}
+
+.navbar p{
+  margin: 0;
+}
+
+.options{
+  display: flex;
+  gap: 20px;
+}
+
+.navbar {
+  flex-wrap: wrap;
+}
+
+.options {
+  gap: 15px;
+}
+
+.nav-option{
+  font-family: "playfair display", serif;
+  color: #f7eedf;
+  font-size: clamp(14px, 2vw, 15px); 
+  /* font-weight: 400; */
+}
+
+.logo{
+  font-family: "Reenie Beanie", cursive;
+  color: #FFECC8;
+  font-size: clamp(35px, 5vw, 50px); 
+  font-weight: 400;
+}
+
 .form-head{
   font-family: "Reenie Beanie", cursive;
   color: #FFECC8;
-  font-size: clamp(28px, 5vw, 50px); 
+  font-size: clamp(35px, 5vw, 50px); 
   font-weight: 400;
 }
 
@@ -92,14 +138,108 @@ section {
   font-family: "playfair display", serif;
   color: #560704;
   font-weight: 500;
-  padding: 20px;
+  padding: clamp(30px, 5vw, 50px);
   border-radius: 15px;
-  width: 400px;
-  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   max-width: 400px;
   margin: 20px auto; /* center horizontally with some vertical spacing */
 }
 
+.card label {
+  margin: 0;
+  text-align: left;
+  padding: 10px 0;
+  font-size: clamp(13px, 2vw, 15px);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+#thumbnail-type{
+  display: flex;
+  /* flex-direction: row; */
+  gap: 10px;
+  margin-top: 5px;
+  /* flex-wrap: wrap;
+  justify-content: center; */
+}
+
+.form-btn{
+  background-color: transparent;
+  border: 2px solid #560704;
+  color: #560704;
+  font-family: "playfair display", serif;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: clamp(13px, 2vw, 15px);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.enter-btn{
+  background-color: transparent;
+  border: 2px solid #560704;
+  color: #560704;
+  font-family: "playfair display", serif;
+  padding: 8px 2px;
+  border-radius: 30px;
+  font-size: clamp(13px, 5vw, 13px);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 200px;
+  margin: 10px auto; /* center horizontally with some vertical spacing */
+
+}
+
+
+.name-text{
+  padding: 10px;
+  border: 1px solid #560704;
+  border-radius: 5px;
+  background-color: #e8e0d2;
+  font-family: "playfair display", serif;
+}
+
+.form-container button:hover {
+  background-color: #560704;
+  color: #EADEC7;
+}
+
+.img-text{
+  align-items: left;
+}
+
+.upload-img-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.image-upload{
+  align-items: center;
+  
+}
+
+textarea 
+{
+    resize: vertical;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #560704;
+    border-radius: 5px;
+    background-color: #e8e0d2;
+    font-family: "playfair display", serif;
+}
+
+.name-text,
+textarea {
+  width: 100%;
+  font-size: clamp(11px, 2vw, 13px);
+}
 
 /* MEDIA QUERIES */
 @media (max-width: 645px) {
@@ -107,4 +247,37 @@ section {
     flex-direction: column;
     gap: 25px;
   }
+}
+
+@media (max-width: 480px) {
+  .form-head {
+    font-size: 28px;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+
+  #thumbnail-type {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 424px) {
+  #thumbnail-type {
+    flex-direction: column;
+    gap: 5px;
+    
+  }
+
+  /* .form-btn {
+    width: 180px;
+    margin: 3px auto; 
+  } */
 }

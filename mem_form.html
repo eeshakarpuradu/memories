@@ -10,13 +10,33 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="navbar">
+        <a href="index.html"><p class="logo">M</p></a>
+        <div class="options">
+            <p class="nav-option">Form</p>
+            <p class="nav-option">Wall</p>
+        </div>
+    </div>
+
     <section>
         <div class="form-container">
             <h2 class="form-head">Our Memories</h2>
             <div class="card">
-                <p>Enter thumbnail</p>
-                <p id="thumbnail-type"><button class="form-btn" id="img-btn">Upload Image</button>
-                <button class="form-btn" id="sentence-btn">A word or sentence</button></p>
+                <div class="form-group">
+                    <label>Enter thumbnail</label>
+                    <div id="thumbnail-type">
+                        <button class="form-btn" id="img-btn">Upload Image</button>
+                        <button class="form-btn" id="sentence-btn">A word or sentence</button>
+                    </div>
+                </div>
+
+                <label>Your Name</label>
+                <input type="text" name="yname" placeholder="Your Name or Anonymous" class="name-text">
+                <!-- <button type="submit" class="enter-btn">Enter</button> -->
+
+                <label>Your Memory with me!</label>
+                <textarea id="comments" name="comments" placeholder="Your Memory..." required></textarea>
+                <button type="submit" class="enter-btn">Enter</button>
             </div>
         </div>
         
@@ -29,16 +49,23 @@
         image_btn.addEventListener("click", function(){
             let img_upload = `
             <form action="/upload" method="POST" enctype="multipart/form-data">
-            <label for="imageUpload">Select an image:</label>
-            <input type="file" id="imageUpload" name="image" accept="image/*">
-            <button type="submit">Upload Image</button>
+            <div class="upload-img-container">
+                <label for="imageUpload" class = "img-text">Select an image:</label>
+                <input type="file" id="imageUpload" name="image" accept="image/*" class="image-upload">
+            </div>
             </form>
 
             `
             thumb_type.innerHTML = img_upload
         })
         sentence_btn.addEventListener("click", function(){
-            thumb_type.innerHTML = "<p>hello, steve</p>"
+            let sen_upload = `
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="sentenceUpload">Select a sen:</label>
+            <input type="text" id="textUpload" name="sname" placeholder="Enter 4-5 words" class="name-text">
+            </form>
+            `
+            thumb_type.innerHTML = sen_upload
         })
     </script>
 </body>
