@@ -126,6 +126,13 @@ section {
   font-weight: 400;
 }
 
+.hamburger{
+  display: none;
+  font-size: 24px;
+  color: #f7eedf;
+  cursor: pointer;
+}
+
 .form-head{
   font-family: "Reenie Beanie", cursive;
   color: #FFECC8;
@@ -246,6 +253,40 @@ textarea {
   .menu-buttons {
     flex-direction: column;
     gap: 25px;
+  }
+}
+
+@media (max-width: 600px){
+  .hamburger{
+    display: block;
+  }
+
+  .options{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+    background-color: #FFECC8;
+    border-radius: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    gap: 2px;
+    width: 200px;
+
+  }
+
+  .options p{
+    padding: 10px 0;
+    font-family: "playfair display", serif;
+    color: #560704;
+    font-size: clamp(14px, 2vw, 15px);
+    border-bottom: 2px solid #560704;
+  }
+
+  .options.active{
+    display: flex;
   }
 }
 

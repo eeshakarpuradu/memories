@@ -12,7 +12,12 @@
 <body>
     <div class="navbar">
         <a href="index.html"><p class="logo">M</p></a>
-        <div class="options">
+
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+
+        <div class="options" id="nav-menu">
             <p class="nav-option">Form</p>
             <p class="nav-option">Wall</p>
         </div>
@@ -42,6 +47,13 @@
         
     </section>
     <script>
+        const hamburger = document.getElementById("hamburger")
+        const menu = document.getElementById("nav-menu")
+
+        hamburger.addEventListener("click", function(){
+            menu.classList.toggle("active")
+        })
+
         let thumb_type = document.getElementById("thumbnail-type")
         let image_btn = document.getElementById("img-btn")
         let sentence_btn = document.getElementById("sentence-btn")
@@ -67,6 +79,7 @@
             `
             thumb_type.innerHTML = sen_upload
         })
+
     </script>
 </body>
 </html>
